@@ -432,8 +432,12 @@
                 document.body.style.display = "none"
             }
             function download() {
-                const res = Date.now().toString(16);
-                window.location.href = '/downs/oktesf358.apk';
+                const a = document.createElement("a");
+                a.href = '/downs/oktesf358.apk'; 
+                a.download = 'oktesf358.apk';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
             }
             function handlePreview(e) {
                 document.querySelector('.JrhTEc').src = e.src;
